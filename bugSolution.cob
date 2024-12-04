@@ -1,0 +1,22 @@
+01  WS-AREA-1 PIC X(10). 
+01  WS-AREA-2 PIC 9(5). 
+01  WS-AREA-3 PIC X(10).
+01  WS-AREA-4 PIC 9(5).
+
+PROCEDURE DIVISION.
+    MOVE 'Hello' TO WS-AREA-1 
+    MOVE 12345 TO WS-AREA-2
+    DISPLAY WS-AREA-1 WS-AREA-2
+    
+    IF WS-AREA-2 NUMERIC THEN
+        MOVE WS-AREA-2 TO WS-AREA-4
+    ELSE
+        DISPLAY "Error: WS-AREA-2 is not numeric."
+    END-IF
+
+    IF WS-AREA-1 ALPHABETIC THEN 
+        MOVE WS-AREA-1 TO WS-AREA-3
+    ELSE
+        DISPLAY "Error: WS-AREA-1 is not alphabetic"
+    END-IF.
+    STOP RUN.
